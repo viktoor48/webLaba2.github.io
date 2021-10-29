@@ -298,6 +298,10 @@ body{
     color: inherit;
     font-weight: 600;
 }
+.actions-product_link:before{
+    margin: 0px 10px 0px 0px;
+    font-size: 16px;
+}
 .btn_white{
     display: inline-flex;
     justify-content: center;
@@ -310,7 +314,7 @@ body{
     background-color: white;
 }
 @media(any-hover: hover) {
-hover{
+.btn_white:hover{
     background-color: coral;
     color: white;
 }
@@ -320,5 +324,12 @@ hover{
     display: flex;
     flex-direction: column;
     position: relative;
+}
+.products_footer{
+    padding: 32px 0px 0px 0px;
+    text-align: center;
+}
+.products_more{
+    border: 1px solid coral;
 }
 /*Стили карточек*/
