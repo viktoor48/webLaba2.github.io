@@ -107,6 +107,15 @@ body{
     font-size: 18px;
     text-decoration: none;
 }
+@media(min-width: 767px) {
+    @media(any-hover: hover) {
+        .header_link:hover{
+            display: block;
+            transform: scale(1.1);
+            transition: all 0.3s ease 0s;
+        }
+    }
+}
 @media(max-width: 767px){
     body.lock{
         overflow: hidden;
@@ -128,7 +137,7 @@ body{
     }
     .header_burger span{
         position: absolute;
-        background-color: #fff;
+        background-color: #3a3a3a;
         left: 0;
         width: 100%;
         height: 2px;
@@ -138,7 +147,7 @@ body{
     .header_burger:before,
     .header_burger:after{
         content: '';
-        background-color: #fff;
+        background-color: #3a3a3a;
         position: absolute;
         width: 100%;
         height: 2px;
@@ -170,7 +179,7 @@ body{
         height: 100%;
         overflow: auto;
         transition: all 0.3s ease 0s;
-        background-color: #317b88;
+        background-color: coral;
         padding: 70px 10px 20px 10px;
     }
     .header_menu.active{
