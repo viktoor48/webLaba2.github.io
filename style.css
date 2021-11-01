@@ -109,18 +109,12 @@ body{
     text-decoration: none;
     display: block;
 }
-.header_link:hover{
-    transform: scale(1.1);
-}
-/*@media(min-width: 767px) {
-    @media(any-hover: hover) {
-        .header_link:hover{
-            !*display: block;*!
-            transform: scale(1.1);
-            transition: all 0.3s ease 0s;
-        }
+@media(min-width: 767px){
+    .header_link:hover{
+        transform: scale(1.1);
     }
-}*/
+}
+
 @media(max-width: 767px){
     body.lock{
         overflow: hidden;
@@ -378,7 +372,7 @@ body.lock{
     color: #fff;
     padding: 30px;
     color: #3a3a3a;
-    background-color: #ece89d;
+    background-color: #fae5d0;
     border-radius: 12px;
     opacity: 0;
     visibility: hidden;
@@ -504,7 +498,7 @@ textarea.form_input{
     justify-content: center;
     align-items: center;
     min-height: 60px;
-    background-color: #7a956b;
+    background-color: #6B6259;
     color: #fff;
     font-size: 18px;
     text-transform: uppercase;
@@ -512,13 +506,13 @@ textarea.form_input{
     font-weight: 700;
     cursor: pointer;
     border-radius: 20px;
-    box-shadow: 0 5px 0 #2c3626;
+    box-shadow: 0 5px 0 #48403d;
     transition: background-color 0.5s ease 0s;
     position: relative;
     top: 0;
 }
 .form_button:hover{
-    background-color: #566c52;
+    background-color: #B8A898;
 }
 .form_button:active{
     top: 3px;
