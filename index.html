@@ -13,17 +13,16 @@
             <div class="header_body">
                 <a href="" class="header_logo">
                     <img src="image/test.svg" alt="">
-                    <!--<img src="image/logo.jpg" alt="">-->
                 </a>
                 <div class="header_burger">
                     <span></span>
                 </div>
                 <nav class="header_menu">
                     <ul class="header_list">
-                        <li><a href="" class="header_link">Главная</a></li>
-                        <li><a href="" class="header_link">Войти</a></li>
-                        <li><a href="" class="header_link">Регистрация</a></li>
-                        <li><a href="" class="header_link">Контакты</a></li>
+                        <li><a href="#" class="header_link">Главная</a></li>
+                        <li><a href="#" class="header_link login">Войти</a></li>
+                        <li><a href="#" class="header_link registration">Регистрация</a></li>
+                        <li><a href="#" class="header_link">Контакты</a></li>
                     </ul>
                 </nav>
             </div>
@@ -50,8 +49,8 @@
                                 <div class="item-product_actions actions-product">
                                     <div class="actions-product_body">
                                         <a href="" class="actions-product_button btn btn_white">Add to cart</a>
-                                        <a href="" class="actions-product_link _icon-favorite">Like</a>
-                                        <ion-icon name = "heart"></ion-icon>
+                                        <a href="" class="actions-product_link _icon-favorite">Like <ion-icon name = "heart"></ion-icon></a>
+                                        <!--<ion-icon name = "heart"></ion-icon>-->
                                     </div>
                                 </div>
                             </div>
@@ -154,8 +153,8 @@
                                 </div>
                                 <div class="item-product_actions actions-product">
                                     <div class="actions-product_body">
-                                        <a href="" class="actions-product_button btn btn_white">Add to cart</a>
-                                        <a href="" class="actions-product_link _icon-favorite">Like</a>
+                                        <a href="#" class="actions-product_button btn btn_white">Add to cart</a>
+                                        <a href="#" class="actions-product_link _icon-favorite">Like</a>
                                         <ion-icon name = "heart"></ion-icon>
                                     </div>
                                 </div>
@@ -163,13 +162,70 @@
                         </article>
                     </div>
                     <div class="products_footer">
-                        <a href="" class="products_more btn btn_white">Show More</a>
+                        <a href="#" class="products_more btn btn_white">Show More</a>
                     </div>
                 </div>
             </section>
         </div>
     </main>
     <footer class="footer">© Сделано в России, 2021 г. Все права защищены.</footer>
+    <div class="popups_inner">
+        <div class="form">
+            <form action="#" id="form" class="form_body">
+                <h1 class="form_title">Отправка данных на почту</h1>
+                <div class="form_item">
+                    <label for="formName" class="form_label">Имя:</label>
+                    <input id="formName" type="text" name="name" class="form_input _req">
+                </div>
+                <div class="form_item">
+                    <label for="formEmail" class="form_label">E-mail:</label>
+                    <input id="formEmail" type="email" name="email" class="form_input _req _email">
+                </div>
+                <div class="form_item">
+                    <div class="form_label">Левша или правша?</div>
+                    <div class="options">
+                        <div class="options_item">
+                            <input id="formRightHanded" checked value="right" type="radio" name="hand" class="options_input">
+                            <label for="formRightHanded" class="options_label"><span>Правша</span></label>
+                        </div>
+                        <div class="options_item">
+                            <input id="formLeftHanded" value="left" type="radio" name="hand" class="options_input">
+                            <label for="formLeftHanded" class="options_label"><span>Левша</span></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <label for="formMessage" class="form_label">Сообщение:</label>
+                    <textarea name="message" id="formMessage" class="form_input"></textarea>
+                </div>
+                <div class="form_item">
+                    <div class="form_label">Возраст:</div>
+                    <select name="age" class="select">
+                        <option value="от 18 до 25" selected>Молодой</option>
+                        <option value="от 25 до 45">Старый</option>
+                        <option value="от 45">Супер стар</option>
+                    </select>
+                </div>
+                <div class="form_item">
+                    <div class="form_label">Прикрепить фото</div>
+                    <div class="file">
+                        <div class="file_item">
+                            <input id="formImage" accept=".jpg, .png, .gif" type="file" name="image" class="file_input">
+                            <div class="file_button">Выбрать</div>
+                        </div>
+                        <div id="formPreview" class="file_preview"></div>
+                    </div>
+                </div>
+                <div class="form_item">
+                    <div class="checkbox">
+                        <input checked id="formAgreement" type="checkbox" name="agreement" class="checkbox_input _req">
+                        <label for="formAgreement" class="checkbox_label"><span>Я даю свое согласие на обработку персональных данных в соответствии с <a href="">условиями</a>*</span></label>
+                    </div>
+                </div>
+                <button type="submit" class="form_button">Отправить</button>
+            </form>
+        </div>
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="script.js"></script>
