@@ -362,6 +362,7 @@ body{
 #popup_reg.open{
     opacity: 1;
     visibility: visible;
+    transition: all 0.3s ease 0s;
 }
 body.lock{
     overflow: hidden;
@@ -478,6 +479,7 @@ body.lock{
 .form_enter.open{
     opacity: 1;
     visibility: visible;
+    transition: all 0.3s ease 0s;
 }
 .form_enter::-webkit-scrollbar{
     display: none;
@@ -485,5 +487,9 @@ body.lock{
 #popup_enter.open{
     opacity: 1;
     visibility: visible;
+    transition: all 0.3s ease 0s;
+}
+.form_enter*{
+    outline: none;
 }
 /*Стили формы входа конец*/
