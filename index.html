@@ -20,7 +20,7 @@
                 <nav class="header_menu">
                     <ul class="header_list">
                         <li><a href="#" class="header_link">Главная</a></li>
-                        <li><a href="#" class="header_link login">Войти</a></li>
+                        <li><a href="#" class="header_link enter">Войти</a></li>
                         <li><a href="#" class="header_link registration">Регистрация</a></li>
                         <li><a href="#" class="header_link">Контакты</a></li>
                     </ul>
@@ -169,9 +169,11 @@
         </div>
     </main>
     <footer class="footer">© Сделано в России, 2021 г. Все права защищены.</footer>
-    <div class="popups_inner">
-        <div class="form">
-            <form action="#" id="form" class="form_body">
+    <div id="popup_reg" class="popups_inner">
+        <!--Форма регистрации-->
+        <div class="form_registration">
+            <a href="#" class="close_popup">X</a>
+            <form action="#" id="form-registration-id" class="form_body">
                 <h1 class="form_title">Регистрация</h1>
                 <div class="form_item">
                     <label for="formName" class="form_label">Имя:</label>
@@ -182,39 +184,16 @@
                     <input id="formEmail" type="email" name="email" class="form_input _req _email">
                 </div>
                 <div class="form_item">
-                    <div class="form_label">Левша или правша?</div>
-                    <div class="options">
-                        <div class="options_item">
-                            <input id="formRightHanded" checked value="right" type="radio" name="hand" class="options_input">
-                            <label for="formRightHanded" class="options_label"><span>Правша</span></label>
-                        </div>
-                        <div class="options_item">
-                            <input id="formLeftHanded" value="left" type="radio" name="hand" class="options_input">
-                            <label for="formLeftHanded" class="options_label"><span>Левша</span></label>
-                        </div>
-                    </div>
+                    <label for="formPhone" class="form_label">Телефон:</label>
+                    <input id="formPhone" type="tel" class="form_input _req _phone">
                 </div>
                 <div class="form_item">
-                    <label for="formMessage" class="form_label">Сообщение:</label>
-                    <textarea name="message" id="formMessage" class="form_input"></textarea>
+                    <label for="formPass" class="form_label">Пароль:</label>
+                    <input id="formPass" type="password" class="form_input _req _pass">
                 </div>
                 <div class="form_item">
-                    <div class="form_label">Возраст:</div>
-                    <select name="age" class="select">
-                        <option value="от 18 до 25" selected>Молодой</option>
-                        <option value="от 25 до 45">Старый</option>
-                        <option value="от 45">Супер стар</option>
-                    </select>
-                </div>
-                <div class="form_item">
-                    <div class="form_label">Прикрепить фото</div>
-                    <div class="file">
-                        <div class="file_item">
-                            <input id="formImage" accept=".jpg, .png, .gif" type="file" name="image" class="file_input">
-                            <div class="file_button">Выбрать</div>
-                        </div>
-                        <div id="formPreview" class="file_preview"></div>
-                    </div>
+                    <label for="formPass-repeat" class="form_label">Повторите пароль:</label>
+                    <input id="formPass-repeat" type="password" class="form_input _req _pass-repeat">
                 </div>
                 <div class="form_item">
                     <div class="checkbox">
@@ -222,9 +201,29 @@
                         <label for="formAgreement" class="checkbox_label"><span>Я даю свое согласие на обработку персональных данных в соответствии с <a href="">условиями</a>*</span></label>
                     </div>
                 </div>
-                <button type="submit" class="form_button">Отправить</button>
+                <button type="submit" class="form_button">Зарегестрироваться</button>
             </form>
         </div>
+        <!--Конец Формы регистрации-->
+    </div>
+    <div id="popup_enter" class="popups_inner">
+        <!--Форма входа-->
+        <div class="form_enter">
+            <a href="#" class="close_popup">X</a>
+            <form action="#" id="form-enter-id" class="form_body">
+                <h1 class="form_title">Вход</h1>
+                <div class="form_item">
+                    <label for="login" class="form_label">Логин:</label>
+                    <input id="login" type="text" name="name" class="form_input _req">
+                </div>
+                <div class="form_item">
+                    <label for="user-pass" class="form_label">Пароль:</label>
+                    <input id="user-pass" type="password" class="form_input _req _pass">
+                </div>
+                <button type="submit" class="form_button">Войти</button>
+            </form>
+        </div>
+        <!--Конец Формы входа-->
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
