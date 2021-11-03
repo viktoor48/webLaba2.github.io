@@ -173,19 +173,19 @@
         <!--Форма регистрации-->
         <div class="form_registration">
             <a href="#" class="close_popup">X</a>
-            <form action="#" id="form-registration-id" class="form_body">
+            <form action="#" id="form-registration-id" class="form_body" name="form_reg_name">
                 <h1 class="form_title">Регистрация</h1>
                 <div class="form_item">
                     <label for="formName" class="form_label">Имя:</label>
-                    <input id="formName" type="text" name="name" class="form_input _req">
+                    <input id="formName" type="text" name="name" placeholder="Вася" class="form_input _req">
                 </div>
                 <div class="form_item">
                     <label for="formEmail" class="form_label">E-mail:</label>
-                    <input id="formEmail" type="email" name="email" class="form_input _req _email">
+                    <input id="formEmail" type="email" name="email" placeholder="example@list.ru" class="form_input _req _email">
                 </div>
                 <div class="form_item">
                     <label for="formPhone" class="form_label">Телефон:</label>
-                    <input id="formPhone" type="tel" class="form_input _req _phone">
+                    <input id="formPhone" type="tel" placeholder="+79192569330" class="form_input _req _phone">
                 </div>
                 <div class="form_item">
                     <label for="formPass" class="form_label">Пароль:</label>
@@ -210,15 +210,15 @@
         <!--Форма входа-->
         <div class="form_enter">
             <a href="#" class="close_popup">X</a>
-            <form action="#" id="form-enter-id" class="form_body">
+            <form action="#" id="form-enter-id" class="form_body" name="form_enter_name">
                 <h1 class="form_title">Вход</h1>
                 <div class="form_item">
                     <label for="login" class="form_label">Логин:</label>
-                    <input id="login" type="text" name="name" class="form_input _req">
+                    <input id="login" type="text" name="userName" class="form_input _req">
                 </div>
                 <div class="form_item">
                     <label for="user-pass" class="form_label">Пароль:</label>
-                    <input id="user-pass" type="password" class="form_input _req _pass">
+                    <input id="user-pass" type="password" name="userPassword" class="form_input _req _pass">
                 </div>
                 <button type="submit" class="form_button">Войти</button>
             </form>
