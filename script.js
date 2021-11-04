@@ -43,13 +43,14 @@ document.addEventListener('DOMContentLoaded', function ()
             console.log(form_registration.userPhone.value);
             console.log(form_registration.userPass.value);
             console.log(form_registration.userPassRepeat.value);
-            let response = await fetch('',{
+            let response = await fetch('https://httpbin.org/post',{
                 method: 'POST',
                 body: formData
             });
             if (response.ok){
-                /*let result = await response.json();
-                alert(result.message)*/
+                let result = await response.json();
+                alert(result.message);
+                console.log(result);
                 form_registration.reset();
                 $('#popup_reg, .form_registration').removeClass('open');
                 $('body').removeClass('lock');
@@ -104,13 +105,14 @@ document.addEventListener('DOMContentLoaded', function ()
             /*form_enter.classList.add('_sending');*/
             console.log(form_enter.userName.value);
             console.log(form_enter.userPassword.value);
-            let response = await fetch('',{
+            let response = await fetch('https://httpbin.org/post',{
                 method: 'POST',
                 body: formData
             });
             if (response.ok){
-                /*let result = await response.json();
-                alert(result.message)*/
+                let result = await response.json();
+                alert(result.message);
+                console.log(result.value);
                 form_enter.reset();
                 $('#popup_enter, .form_enter').removeClass('open');
                 $('body').removeClass('lock');
