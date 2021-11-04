@@ -55,53 +55,40 @@ enterForm.addEventListener('submit', function () {
 });
 /*Валидация формы входа конец*/
 
-const mainForm = document.forms[0];
 
-const mainFormInput = mainForm.name;
-console.log(mainFormInput);
 /*Валидация формы регистрации начало*/
 
-/*const form = document.getElementById('form-registration-id');
-form.onsubmit = async (e) => {
-    e.preventDefault();
-
-    let formData = new FormData(form);
-    /!*let response = await fetch('#', {
-        method: 'POST',
-        body: new FormData(form)
-    });
-*!/
-
-    alert(result.message);
-};*/
-/*
 document.addEventListener('DOMContentLoaded', function ()
 {
-    const form = document.getElementById('form-registration-id');
-    form.addEventListener('submit', formSend);
+    const form_registration = document.getElementById('form-registration-id');
+    form_registration.addEventListener('submit', formSend);
 
     async function formSend(e){
         e.preventDefault();
-        let error = formValidate(form);
+        let error = formValidate(form_registration);
+        let formData = new FormData(form_registration);
 
-        let formData = new FormData(form);
-        formData.append('image', formImage.files[0]);
-
-        if (error ===0){
-            form.classList.add('_sending');
-            let response = await fetch('sendmail.php',{
+        if (error === 0){
+            /*form_registration.classList.add('_sending');*/
+            console.log(form_registration.name.value);
+            console.log(form_registration.email.value);
+            console.log(form_registration.userPhone.value);
+            console.log(form_registration.userPass.value);
+            console.log(form_registration.userPassRepeat.value);
+            let response = await fetch('',{
                 method: 'POST',
                 body: formData
             });
             if (response.ok){
-                let result = await response.json();
-                alert(result.message);
-                formPreview.innerHTML = '';
-                form.reset();
-                form.classList.remove('_sending');
+                /*let result = await response.json();
+                alert(result.message)*/
+                form_registration.reset();
+                $('#popup_reg, .form_registration').removeClass('open');
+                $('body').removeClass('lock');
+                /*form_registration.classList.remove('_sending');*/
             }else {
                 alert('Ошибка');
-                form.classList.remove('_sending');
+                /*form_registration.classList.remove('_sending');*/
             }
         }else {
             alert('Заполните обязательные поля');
@@ -110,13 +97,14 @@ document.addEventListener('DOMContentLoaded', function ()
 
     function formValidate(form){
         let error = 0;
-        let formReq = document.querySelectorAll('._req');
+        let formReq = form.querySelectorAll('._req');
 
         for (let index = 0; index < formReq.length; index++)
         {
             const input = formReq[index];
             formRemoveError(input);
 
+            //нужно осуществить проверку паролей
             if (input.classList.contains('_email')){
                 if (emailTest(input)){
                     formAddError(input);
@@ -148,7 +136,6 @@ document.addEventListener('DOMContentLoaded', function ()
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
     }
 });
-*/
 /*Валидация формы регистрации конец*/
 
 /*

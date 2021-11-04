@@ -443,7 +443,9 @@ body.lock{
 }
 .form_input._error{
     box-shadow: 0 0 15px red;
-}
+}.checkbox._error{
+    box-shadow: 0 0 15px red;
+ }
 .form_input:focus{
     box-shadow: 0 0 15px #7a956b;
 }
