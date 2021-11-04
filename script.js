@@ -25,45 +25,13 @@ $(document).ready(function() {
     });
 });
 
-/*Валидация формы входа начало*/
-const enterForm = document.getElementById('form-enter-id');
-const enterFormLogin = enterForm.userName;
-const enterFormPassword = enterForm.userPassword;
-
-enterForm.addEventListener('submit', function () {
-    console.log('Форма отправляется...');
-    let error = 0;
-    //Проверяем поля и если есть ошибки отменяем отправку
-    if (!enterFormLogin.value){
-        console.log('Поле username не заполнено');
-        error++;
-        event.preventDefault();
-    }
-    if (!enterFormPassword.value){
-        console.log('Поле userPassword не заполнено');
-        error++;
-        event.preventDefault();
-    }
-    if (error === 0)
-    {
-        console.log('Логин:',enterFormLogin.value);
-        console.log('Пароль',enterFormPassword.value);
-        console.log('Форма успешно отправлена');
-        enterForm.reset();
-        /*event.preventDefault();*///чтобы было видно консоль  нужно отменить очистку консоли потом
-    }
-});
-/*Валидация формы входа конец*/
-
-
-/*Валидация формы регистрации начало*/
-
 document.addEventListener('DOMContentLoaded', function ()
 {
     const form_registration = document.getElementById('form-registration-id');
-    form_registration.addEventListener('submit', formSend);
+    form_registration.addEventListener('submit', formSendReg);
 
-    async function formSend(e){
+    /*Валидация формы регистрации начало*/
+    async function formSendReg(e){
         e.preventDefault();
         let error = formValidate(form_registration);
         let formData = new FormData(form_registration);
@@ -94,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function ()
             alert('Заполните обязательные поля');
         }
     }
+    /*Валидация формы регистрации конец*/
 
     function formValidate(form){
         let error = 0;
@@ -122,6 +91,39 @@ document.addEventListener('DOMContentLoaded', function ()
         }
         return error;
     }
+    /*Валидация формы входа начало*/
+    const form_enter = document.getElementById('form-enter-id');
+    form_enter.addEventListener('submit',form_send_enter);
+
+    async function form_send_enter(e) {
+        e.preventDefault();
+        let error = formValidate(form_enter);
+        let formData = new FormData(form_enter);
+
+        if (error === 0){
+            /*form_enter.classList.add('_sending');*/
+            console.log(form_enter.userName.value);
+            console.log(form_enter.userPassword.value);
+            let response = await fetch('',{
+                method: 'POST',
+                body: formData
+            });
+            if (response.ok){
+                /*let result = await response.json();
+                alert(result.message)*/
+                form_enter.reset();
+                $('#popup_enter, .form_enter').removeClass('open');
+                $('body').removeClass('lock');
+                /*form_enter.classList.remove('_sending');*/
+            }else {
+                alert('Ошибка');
+                /*form_enter.classList.remove('_sending');*/
+            }
+        }else {
+            alert('Заполните обязательные поля');
+        }
+    }
+    /*Валидация формы входа конец*/
 
     function formAddError(input){
         input.parentElement.classList.add('_error');
@@ -136,16 +138,32 @@ document.addEventListener('DOMContentLoaded', function ()
         return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
     }
 });
-/*Валидация формы регистрации конец*/
 
-/*
-var login_btn = document.getElementsByClassName('login');
-var registration_btn = document.getElementsByClassName('registration');
+/*Валидация формы входа начало*/
+/*const enterForm = document.getElementById('form-enter-id');
+const enterFormLogin = enterForm.userName;
+const enterFormPassword = enterForm.userPassword;
 
-var form = document.getElementsByClassName('form');
-var popup_inner = document.getElementsByClassName('popups_inner');
-
-registration_btn[0].onclick = function (){
-    form[0].classList.add('open');
-    popup_inner[0].classList.add('open');
-}*/
+enterForm.addEventListener('submit', function () {
+    console.log('Форма отправляется...');
+    let error = 0;
+    //Проверяем поля и если есть ошибки отменяем отправку
+    if (!enterFormLogin.value){
+        console.log('Поле username не заполнено');
+        error++;
+        event.preventDefault();
+    }
+    if (!enterFormPassword.value){
+        console.log('Поле userPassword не заполнено');
+        error++;
+        event.preventDefault();
+    }
+    if (error === 0)
+    {
+        console.log('Логин:',enterFormLogin.value);
+        console.log('Пароль',enterFormPassword.value);
+        console.log('Форма успешно отправлена');
+        enterForm.reset();
+        /!*event.preventDefault();*!///чтобы было видно консоль  нужно отменить очистку консоли потом
+    }
+});*/
