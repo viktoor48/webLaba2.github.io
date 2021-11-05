@@ -44,7 +44,8 @@ document.addEventListener('DOMContentLoaded', function ()
             });
             if (response.ok){
                 let result = await response.json();
-                alert(result.message);
+                alert('Успешно');
+                /*alert(result.message);*/
                 console.log(result);
                 form_registration.reset();
                 $('#popup_reg, .form_registration').removeClass('open');
@@ -125,7 +126,8 @@ document.addEventListener('DOMContentLoaded', function ()
             });
             if (response.ok){
                 let result = await response.json();
-                alert(result.message);
+                alert('Успешно');
+                /*alert(result.message);*/
                 console.log(result);
                 form_enter.reset();
                 $('#popup_enter, .form_enter').removeClass('open');
