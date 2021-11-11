@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 let result = await response.json();
                 alert('Успешно');
                 /*alert(result.message);*/
-                console.log(result);
+                console.log(result.form);
                 form_registration.reset();
                 $('#popup_reg, .form_registration').removeClass('open');
                 $('body').removeClass('lock');
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', function ()
                 let result = await response.json();
                 alert('Успешно');
                 /*alert(result.message);*/
-                console.log(result);
+                console.log(result.form);
                 form_enter.reset();
                 $('#popup_enter, .form_enter').removeClass('open');
                 $('body').removeClass('lock');
